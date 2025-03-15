@@ -2,7 +2,7 @@
   "files.associations": {
     "*.css": "postcss"
   },
-   "files.readonlyInclude": {
+  "files.readonlyInclude": {
     "**/routeTree.gen.ts": true
   },
   "files.watcherExclude": {
@@ -60,9 +60,13 @@
     "pcss",
     "postcss"
   ],
-  "cSpell.words": [
-    "domic",
-    "sonner",
-    "valibot"
-  ],
+  "cSpell.words": ["domic", "sonner", "valibot"],
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "file": ".copilot-commit-message-instructions.md"
+    },
+    {
+      "text": "Use conventional commit message format with issue numbers. The format is: <type>(<scope>): <message> (#<issue-number>). Example: feat(auth): add Google login (#123). Extract the issue number from the branch name if available."
+    }
+  ]
 }

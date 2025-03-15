@@ -15,7 +15,9 @@
     "preview": "vite preview",
     "postinstall": "npx simple-git-hooks",
     "sizecheck": "npx vite-bundle-visualizer",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "verify-commit": "node src/scripts/verify-commit.js",
+    "verify-branch": "node src/scripts/verify-branch.js"
   },
   "dependencies": {
     "@internationalized/date": "^3.7.0",
@@ -62,7 +64,6 @@
     "eslint-plugin-unused-imports": "^4.1.4",
     "globals": "^16.0.0",
     "lint-staged": "^15.5.0",
-    "picocolors": "^1.1.1",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "simple-git-hooks": "^2.11.1",
@@ -80,8 +81,8 @@
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged",
-    "commit-msg": "node src/scripts/verify-commit.js",
-    "pre-push": "pnpm typecheck"
+    "commit-msg": "pnpm verify-commit",
+    "pre-push": "pnpm verify-branch"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,css,md,html}": [
