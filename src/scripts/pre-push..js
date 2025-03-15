@@ -4,7 +4,7 @@ import { execSync } from 'node:child_process'
 const branchName = execSync('git rev-parse --abbrev-ref HEAD').toString().trim()
 
 const branchRegex =
-  /^(feature|bugfix|improvement|library|prerelease|release|hotfix)\/[a-z0-9._-]+$/
+  /^(feature|bugfix|hotfix|release|prerelease|improvement|library|chore|test|refactor|docs|ci|config|deps|design|i18n|security)\/#\d+-[a-z0-9._-]+$/
 
 if (!branchRegex.test(branchName)) {
   console.error(
