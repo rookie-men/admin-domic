@@ -60,7 +60,7 @@
     "pcss",
     "postcss"
   ],
-  "cSpell.words": ["domic", "sonner", "valibot"],
+  "cSpell.words": ["domic", "Nuqs", "sonner", "valibot"],
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
       "file": ".copilot-commit-message-instructions.md"

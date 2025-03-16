@@ -52,6 +52,7 @@ export default tseslint.config(
       'unicorn/prevent-abbreviations': 'off',
       'no-unused-vars': 'off',
       'unused-imports/no-unused-imports': 'error',
+      'react-refresh/only-export-components': 'off',
       'unused-imports/no-unused-vars': [
         'warn',
         {
