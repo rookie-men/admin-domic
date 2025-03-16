@@ -1,20 +1,21 @@
 name: CI
 
 on:
-  push:
-    branches:
-      - main
-
   pull_request:
     branches:
       - main
     types:
       - ready_for_review
+      - synchronize
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+      - name: Check if PR is in draft mode
+        if: github.event.pull_request.draft == true
+        run: echo "Skipping CI because PR is still in draft mode" && exit 1
+
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v3
       - uses: actions/setup-node@v4
@@ -34,6 +35,10 @@ jobs:
   typecheck:
     runs-on: ubuntu-latest
     steps:
+      - name: Check if PR is in draft mode
+        if: github.event.pull_request.draft == true
+        run: echo "Skipping CI because PR is still in draft mode" && exit 1
+
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v3
       - uses: actions/setup-node@v4
