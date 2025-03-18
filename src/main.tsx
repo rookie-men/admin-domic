@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { createRouter, RouterProvider } from '@tanstack/react-router'
+import { NuqsAdapter } from 'nuqs/adapters/react'
 import '~/assets/styles/index.css'
 import { routeTree } from './routeTree.gen'
 
@@ -26,7 +27,9 @@ if (rootElement && !rootElement.innerHTML) {
   root.render(
     <StrictMode>
       <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
+        <NuqsAdapter>
+          <RouterProvider router={router} />
+        </NuqsAdapter>
       </QueryClientProvider>
     </StrictMode>
   )
